@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Localizacao} from "./model/localizacao.model";
 
 @Component({
   selector: 'app-root',
@@ -7,20 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  localizacao: any = new Object();
-
-  title = 'app works!';
-
-  nomeCompleto:string = 'Werlon Guilherme';
-
-  mostraAlerta(nome:string):void{
-    alert(nome);
-  }
-
-  exibirLocalizacao(localizacao): void{
-    alert(localizacao);
-    console.log(localizacao);
-
-    this.localizacao = localizacao;
-  }
 }
