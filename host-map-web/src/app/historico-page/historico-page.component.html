@@ -3,8 +3,9 @@
   <div class="col-md-2"><span>IP:</span></div>
   <div class="col-md-2"><span>Latitude:</span></div>
   <div class="col-md-2"><span>Longitude:</span></div>
-  <div class="col-md-2"><span>Data:</span></div>
-  <div class="col-md-2"><span>Hora:</span></div>
+  <div class="col-md-1"><span>Data:</span></div>
+  <div class="col-md-1"><span>Hora:</span></div>
+  <div class="col-md-2"><span>Ações:</span></div>
 </div>
 
 <div class="row" *ngFor="let loc of historico">
@@ -12,6 +13,9 @@
   <div class="col-md-2"><span>{{loc.query}}</span></div>
   <div class="col-md-2"><span>{{loc.lat}}</span></div>
   <div class="col-md-2"><span>{{loc.lon}}</span></div>
-  <div class="col-md-2"><span>{{loc.dataHora}}</span></div>
-  <div class="col-md-2"><span>{{loc.dataHora}}</span></div>
+  <div class="col-md-1"><span>{{loc.dataHora| date: 'dd/MM/yyyy'}}</span></div>
+  <div class="col-md-1"><span>{{loc.dataHora| date: 'HH:mm:ss'}}</span></div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-primary" (click)="consultar(loc.query)">Consultar</button>
+  </div>
 </div>

@@ -12,54 +12,54 @@ function LocalizacaoService() {
 
 function salvar(localizacao) {
     return new Promise((resolve, reject) => {
-            localizacao.save((err, doc) => {
+        localizacao.save((err, doc) => {
             if (err) return reject(err);
 
-    resolve(doc);
-});
-});
+            resolve(doc);
+        });
+    });
 }
 
 function atualizar(localizacao) {
     return new Promise((resolve, reject) => {
-            Localizacao.findByIdAndUpdate(localizacao._id, localizacao, (err, doc) => {
+        Localizacao.findByIdAndUpdate(localizacao._id, localizacao, (err, doc) => {
             if (err) return reject(err);
 
-    resolve(doc);
-});
-});
+            resolve(doc);
+        });
+    });
 }
 
 function excluir(id) {
     return new Promise((resolve, reject) => {
-            Localizacao.findByIdAndRemove(id, (err, doc) => {
+        Localizacao.findByIdAndRemove(id, (err, doc) => {
             if (err) return reject(err);
 
-    resolve(doc);
-});
-});
+            resolve(doc);
+        });
+    });
 }
 
 function consultar() {
     return new Promise((resolve, reject) => {
-            let criteria = {};
+        let criteria = {};
 
-    Localizacao.find(criteria, (err, docs) => {
-        if (err) return reject(err);
+        Localizacao.find(criteria, (err, docs) => {
+            if (err) return reject(err);
 
-    resolve(docs);
-});
-});
+            resolve(docs);
+        });
+    });
 }
 
 function consultarPorId(id) {
     return new Promise((resolve, reject) => {
-            Localizacao.findById(id, (err, doc) => {
+        Localizacao.findById(id, (err, doc) => {
             if (err) return reject(err);
 
-    resolve(doc);
-});
-});
+            resolve(doc);
+        });
+    });
 }
 
 module.exports = LocalizacaoService();

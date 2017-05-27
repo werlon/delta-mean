@@ -11,7 +11,8 @@ export class Localizacao {
     public query?: String,
     public country?: String,
     public dataHora?: String,
-    public dominio?: String) {
+    public dominio?: String,
+    public _id?: String) {
 
   }
 }

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {HttpClientService} from "../http-client.service";
 import {Localizacao} from "../model/localizacao.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'fd-search-bar',
@@ -14,9 +15,22 @@ export class FdSearchBarComponent implements OnInit {
   @Output()
   localizacao: EventEmitter<Localizacao> = new EventEmitter();
 
-  constructor(private httpClient: HttpClientService) { }
+  constructor(private httpClient: HttpClientService, private _route:ActivatedRoute ) {
+
+    this._route.params.subscribe((params)=>{
+      let ip = params['dominio'];
+      if(ip){
+        this.dominio = ip;
+      }
+
+    });
+  }
 
   ngOnInit() {
+    if(this.dominio){
+      this.pesquisar();
+    }
+
   }
 
   pesquisar(): void{
@@ -26,6 +40,8 @@ export class FdSearchBarComponent implements OnInit {
         (data) => {
           //console.log(data);
           //alert(data);
+
+          data.dominio = this.dominio;
 
           this.localizacao.emit(data);
           //console.log(data)

@@ -13,11 +13,11 @@ function MongoDBConnection() {
 
 function connect() {
 
-    mongoose.connect(getUrlConnection(), (err) = > {
-        if(err) throw err;
+    mongoose.connect(getUrlConnection(), (err) => {
+        if (err) throw err;
 
-    console.log('conectado');
-})
+        console.log('conectado');
+    })
     ;
 }
 

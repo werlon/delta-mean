@@ -18,6 +18,7 @@ import { HistoricoPageComponent } from './historico-page/historico-page.componen
 export const rotas: Routes = [
   {path: '', redirectTo: '/map', pathMatch: 'full'},
   {path: 'map', component: MapPageComponent},
+  {path: 'map/:dominio', component: MapPageComponent},
   {path: 'historico', component: HistoricoPageComponent},
 ];
 
