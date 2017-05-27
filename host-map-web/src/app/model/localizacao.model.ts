@@ -9,7 +9,9 @@ export class Localizacao {
     public lon?: Number,
     public org?: String,
     public query?: String,
-    public country?: String) {
+    public country?: String,
+    public dataHora?: String,
+    public dominio?: String) {
 
   }
 }

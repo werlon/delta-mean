@@ -1,3 +1,17 @@
-<p>
-  historico-page works!
-</p>
+<div class="row">
+  <div class="col-md-2"><span>Dominio:</span></div>
+  <div class="col-md-2"><span>IP:</span></div>
+  <div class="col-md-2"><span>Latitude:</span></div>
+  <div class="col-md-2"><span>Longitude:</span></div>
+  <div class="col-md-2"><span>Data:</span></div>
+  <div class="col-md-2"><span>Hora:</span></div>
+</div>
+
+<div class="row" *ngFor="let loc of historico">
+  <div class="col-md-2"><span>{{loc.dominio}}</span></div>
+  <div class="col-md-2"><span>{{loc.query}}</span></div>
+  <div class="col-md-2"><span>{{loc.lat}}</span></div>
+  <div class="col-md-2"><span>{{loc.lon}}</span></div>
+  <div class="col-md-2"><span>{{loc.dataHora}}</span></div>
+  <div class="col-md-2"><span>{{loc.dataHora}}</span></div>
+</div>
