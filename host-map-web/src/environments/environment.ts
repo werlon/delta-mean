@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  googleApiKey: 'AIzaSyB7xR_69r6TVKfIz7zOj9o_d6YAd7vY3w4'
+  googleApiKey: ''
 };
